@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <title>Image Text & Caption Processor</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Обработка изображения</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required />
+            <br />
+            <button type="submit">Загрузить и обработать</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                {% if result.error %}
+                    <p style="color:red;">Ошибка: {{ result.error }}</p>
+                {% else %}
+                    <h2>Результаты:</h2>
+                    <p><strong>Оригинал (eng):</strong> {{ result.original }}</p>
+                    <p><strong>Перевод (ru):</strong> {{ result.translated }}</p>
+
+                    {% if result.image_path %}
+                        <img src="{{ url_for('static', filename=result.image_path) }}" alt="Uploaded Image" />
+                    {% endif %}
+
+                    <audio controls>
+                        <source src="{{ url_for('static', filename=result.audio) }}" type="audio/mpeg" />
+                        Ваш браузер не поддерживает аудио элемент.
+                    </audio>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

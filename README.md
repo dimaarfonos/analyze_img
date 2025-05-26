@@ -46,14 +46,23 @@
 project/
 │
 ├── app.py                 # Flask-приложение
+
 ├── static/                # Статические файлы (CSS, изображения, аудио)
+
 │   ├── styles.css
+
 │   └── *.mp3 / *.jpg ...
+
 ├── static_wb/             # Папка для временных файлов
+
 ├── templates/
+
 │   └── index.html         # Основной HTML-шаблон
+
 ├── requirements.txt       # Зависимости
+
 └── README.md
+
 └── Makefile
 
 

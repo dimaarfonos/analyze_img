@@ -2,6 +2,8 @@
 Сайт для описания картинок и перевод с английского на русский
 <h4> <a href = "https://colab.research.google.com/drive/1-yfbHVXyNJFTGpTZMCR2qUDwagYG7Yyj?usp=sharing"> Ссылка на рабочий код в виртуальном пространстве Google Colab </a></h4>
 
+![](templates/sok.png){# width=70% }
+
 # 🖼️ Image Text & Caption Processor
 
 Это веб-приложение на Flask, которое:
